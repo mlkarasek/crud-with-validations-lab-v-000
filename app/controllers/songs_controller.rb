@@ -20,7 +20,7 @@ class SongsController < ApplicationController
   else
     render :new
   end
-end 
+end
 
   def edit
   end
@@ -29,7 +29,7 @@ end
   end
 
   def destroy
-    @song = Song.find(params[:id]).destroy
+    Song.find(params[:id]).destroy
     redirect_to song_url
   end
 
