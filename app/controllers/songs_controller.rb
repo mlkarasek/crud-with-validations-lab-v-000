@@ -27,9 +27,8 @@ end
   end
 
   def update
-    @song.update(song_params)
-    if @song.valid?
-      @song.save
+    @song = Song.find(params[:id])
+  if @song.update(song_params)
       redirect_to song_path(@song)
     else
       render :edit
