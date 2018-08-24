@@ -28,7 +28,8 @@ end
 
   def update
     @song = Song.find(params[:id])
-    if @song.update(song_params)
+    @song.update(song_params)
+    if @song.save 
       redirect_to song_url(@song)
     else
       render :edit
