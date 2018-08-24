@@ -26,6 +26,13 @@ end
   end
 
   def update
+    @song.update(post_params)
+    if @song.valid?
+      @song.save
+      redirect_to song_path(@song)
+    else
+      render :edit
+    end 
   end
 
   def destroy
