@@ -26,7 +26,7 @@ end
   end
 
   def update
-    @song.update(post_params)
+    @song.update(song_params)
     if @song.valid?
       @song.save
       redirect_to song_path(@song)
